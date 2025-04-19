@@ -1,2 +1,6 @@
+<p align="center">
+  <img src="icon.png" alt="Unifile Logo" width="150"/>
+</p>
+
 # Unifile
-Local file conversion &amp; download hub (docs, images, audio, video), free, unlimited &amp; ad‑free.
+Local file conversion & download hub (docs, images, audio, video), free, unlimited & ad‑free.
