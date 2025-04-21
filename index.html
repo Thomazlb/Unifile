@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unifile</title>
+    <meta name="description" content="Unifile - Votre hub de conversion & téléchargement local. Tout est gratuit, sans pub, illimité et 100% local.">
+    <link rel="icon" href="screen/icon.png" type="image/png">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Fond parallaxe global -->
+    <div class="parallax-background"></div>
+
+    <header>
+        <nav class="glass-nav">
+            <div class="logo">
+                <img src="screen/icon.png" alt="Unifile Logo">
+                <h2>Unifile</h2>
+            </div>
+            <div class="nav-links mobile-hidden">
+                <a href="#features" data-i18n="nav-features">Fonctionnalités</a>
+                <a href="#how-it-works" data-i18n="nav-how-it-works">Comment ça marche</a>
+                <a href="#support" data-i18n="nav-support">Soutien</a>
+            </div>
+            <div class="language-switch" data-active="fr">
+                <button class="active" data-lang="fr">FR</button>
+                <button data-lang="en">EN</button>
+            </div>
+        </nav>
+
+        <div class="hero-section">
+            <div class="parallax-bg">
+                <div class="layer" data-speed="0.1"></div>
+                <div class="layer" data-speed="0.3"></div>
+                <div class="layer" data-speed="0.5"></div>
+            </div>
+            <div class="hero-content glass-effect">
+                <div class="hero-text">
+                    <h1 data-i18n="hero-title">Unifile : Votre hub de conversion & téléchargement local</h1>
+                    <p data-i18n="hero-subtitle">Tout est gratuit, sans pub, illimité et 100% local</p>
+                    <div class="hero-buttons">
+                        <a href="https://drive.google.com/uc?export=download&id=1ishXbW2_xDWqC-j5hyYAAQ-7PEU49hc1" target="_blank" class="btn primary-btn" data-i18n="download-button">Télécharger l'app</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="screen/all tabs.png" alt="Unifile Interface" class="floating-image">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="live-demo" class="glass-section">
+        <h2 class="section-title" data-i18n="live-demo">Démonstration en direct</h2>
+        <div class="video-container">
+            <video id="demo-video" src="screen/livedemo.mp4"></video>
+            <div class="custom-controls">
+                <button id="play-pause"><i class="fas fa-play"></i></button>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                    <div class="time-tooltip">00:00</div>
+                </div>
+                <div class="time-display">00:00 / 00:00</div>
+                <button id="fullscreen"><i class="fas fa-expand"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="glass-section">
+        <h2 class="section-title" data-i18n="features-title">Fonctionnalités clés</h2>
+        
+        <div class="feature-timeline">
+            <div class="timeline-line"></div>
+            
+            <!-- Documents -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-image" data-connect="documents">
+                        <img src="screen/document converter.png" alt="Document Converter" class="floating-image">
+                    </div>
+                    <div class="timeline-text" data-connect="documents">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3 data-i18n="documents-title">Documents</h3>
+                        <p data-i18n="documents-desc">PDF ↔ DOCX, PPTX, XLSX, TXT, ODT... Préservation mise en page, polices, images intégrées.</p>
+                    </div>
+                    <div class="connector">
+                        <svg><path d="M0,0 C0,0 0,0 0,0"></path></svg>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Images -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-image" data-connect="images">
+                        <img src="screen/image converter.png" alt="Image Converter" class="floating-image">
+                    </div>
+                    <div class="timeline-text" data-connect="images">
+                        <div class="feature-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <h3 data-i18n="images-title">Images</h3>
+                        <p data-i18n="images-desc">JPG, PNG, WebP, GIF, TIFF, BMP... Compression optimisée, redimensionnement, réglage qualité.</p>
+                    </div>
+                    <div class="connector">
+                        <svg><path d="M0,0 C0,0 0,0 0,0"></path></svg>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Videos -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-image" data-connect="videos">
+                        <img src="screen/video converter.png" alt="Video Converter" class="floating-image">
+                    </div>
+                    <div class="timeline-text" data-connect="videos">
+                        <div class="feature-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 data-i18n="videos-title">Vidéos</h3>
+                        <p data-i18n="videos-desc">MP4, WebM, AVI, MKV, MOV... Accélération GPU pour une conversion ultra-rapide.</p>
+                    </div>
+                    <div class="connector">
+                        <svg><path d="M0,0 C0,0 0,0 0,0"></path></svg>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Audio -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-image" data-connect="audio">
+                        <img src="screen/musique converter.png" alt="Audio Converter" class="floating-image">
+                    </div>
+                    <div class="timeline-text" data-connect="audio">
+                        <div class="feature-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3 data-i18n="audio-title">Audio</h3>
+                        <p data-i18n="audio-desc">MP3, WAV, FLAC, AAC, OGG... Bitrate ajustable, normalisation du volume.</p>
+                    </div>
+                    <div class="connector">
+                        <svg><path d="M0,0 C0,0 0,0 0,0"></path></svg>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video Player -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-image" data-connect="player">
+                        <img src="screen/vide player.png" alt="Video Player" class="floating-image">
+                    </div>
+                    <div class="timeline-text" data-connect="player">
+                        <div class="feature-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <h3 data-i18n="player-title">Lecteur Vidéo</h3>
+                        <p data-i18n="player-desc">Lecteur intégré avec contrôle de vitesse, sous-titres et qualité.</p>
+                    </div>
+                    <div class="connector">
+                        <svg><path d="M0,0 C0,0 0,0 0,0"></path></svg>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video Download -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-image" data-connect="videodownload">
+                        <img src="screen/videodownload.png" alt="Video Download" class="floating-image">
+                    </div>
+                    <div class="timeline-text" data-connect="videodownload">
+                        <div class="feature-icon">
+                            <i class="fas fa-cloud-download-alt"></i>
+                        </div>
+                        <h3 data-i18n="videodownload-title">Téléchargement Vidéo</h3>
+                        <p data-i18n="videodownload-desc">YouTube, TikTok, Vimeo, Dailymotion, Coflix, Wiflix... Téléchargement direct, sans trackers.</p>
+                    </div>
+                    <div class="connector">
+                        <svg><path d="M0,0 C0,0 0,0 0,0"></path></svg>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Movie Download -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-image" data-connect="movies">
+                        <img src="screen/moviedownload.png" alt="Movie Download" class="floating-image">
+                    </div>
+                    <div class="timeline-text" data-connect="movies">
+                        <div class="feature-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h3 data-i18n="movies-title">Films & Séries</h3>
+                        <p data-i18n="movies-desc">Téléchargement de films et séries sans publicité, illimité et sécurisé.</p>
+                    </div>
+                    <div class="connector">
+                        <svg><path d="M0,0 C0,0 0,0 0,0"></path></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-image" data-connect="settings">
+                        <img src="screen/settings.png" alt="Settings" class="floating-image">
+                    </div>
+                    <div class="timeline-text" data-connect="settings">
+                        <div class="feature-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h3 data-i18n="settings-title">Paramètres</h3>
+                        <p data-i18n="settings-desc">Thèmes clair/sombre, langues, dossiers de sortie personnalisables.</p>
+                    </div>
+                    <div class="connector">
+                        <svg><path d="M0,0 C0,0 0,0 0,0"></path></svg>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- History -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-image" data-connect="history">
+                        <img src="screen/history.png" alt="History" class="floating-image">
+                    </div>
+                    <div class="timeline-text" data-connect="history">
+                        <div class="feature-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h3 data-i18n="history-title">Historique</h3>
+                        <p data-i18n="history-desc">Suivez vos conversions et téléchargements récents pour un accès rapide.</p>
+                    </div>
+                    <div class="connector">
+                        <svg><path d="M0,0 C0,0 0,0 0,0"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="feature-highlight">
+            <div class="highlight-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="highlight-text">
+                <h3 data-i18n="security-title">100% Local et Sécurisé</h3>
+                <p data-i18n="security-desc">Conversion entièrement locale : aucune donnée ne quitte votre appareil. Pas de serveur, pas de fuite de données.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="glass-section">
+        <h2 class="section-title" data-i18n="how-it-works-title">Comment ça marche</h2>
+        
+        <div class="steps-container">
+            <div class="step glass-effect" data-parallax="2">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3 data-i18n="step1-title">Glisser-déposer un fichier ou coller un lien vidéo</h3>
+                    <p data-i18n="step1-desc">Sélectionnez simplement le fichier à convertir ou collez l'URL de la vidéo à télécharger.</p>
+                </div>
+                <div class="step-icon">
+                    <i class="fas fa-file-import"></i>
+                </div>
+            </div>
+            
+            <div class="step glass-effect" data-parallax="3">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3 data-i18n="step2-title">Choisir format et options</h3>
+                    <p data-i18n="step2-desc">Sélectionnez le format de sortie désiré et ajustez les paramètres (résolution, codec, bitrate...).</p>
+                </div>
+                <div class="step-icon">
+                    <i class="fas fa-sliders-h"></i>
+                </div>
+            </div>
+            
+            <div class="step glass-effect" data-parallax="4">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3 data-i18n="step3-title">Télécharger instantanément votre conversion</h3>
+                    <p data-i18n="step3-desc">Profitez d'un traitement ultra-rapide localement, sans attente de serveur.</p>
+                </div>
+                <div class="step-icon">
+                    <i class="fas fa-download"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="installation" class="glass-section">
+        <h2 class="section-title" data-i18n="installation-title">Comment installer Unifile</h2>
+        
+        <div class="installation-steps glass-effect">
+            <div class="installation-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3 data-i18n="install-step1-title">Téléchargez le fichier compressé</h3>
+                    <p data-i18n="install-step1-desc">Cliquez sur le bouton "Télécharger l'app" en haut de la page.</p>
+                </div>
+            </div>
+            
+            <div class="installation-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3 data-i18n="install-step2-title">Extrayez le fichier RAR</h3>
+                    <p data-i18n="install-step2-desc">Utilisez WinRAR ou 7-Zip pour extraire le contenu du fichier téléchargé.</p>
+                </div>
+            </div>
+            
+            <div class="installation-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3 data-i18n="install-step3-title">Placez le dossier où vous voulez</h3>
+                    <p data-i18n="install-step3-desc">Déplacez le dossier extrait à l'emplacement de votre choix sur votre ordinateur.</p>
+                </div>
+            </div>
+            
+            <div class="installation-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3 data-i18n="install-step4-title">Utilisez le raccourci Unifile</h3>
+                    <p data-i18n="install-step4-desc">Placez le raccourci Unifile où vous voulez (bureau, menu démarrer...) pour lancer l'application facilement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="advantages" class="glass-section">
+        <h2 class="section-title" data-i18n="advantages-title">Avantages & Chiffres clés</h2>
+        
+        <div class="advantages-grid">
+            <div class="advantage-card glass-effect" data-parallax="2">
+                <div class="advantage-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3 data-i18n="speed-title">Traitement Ultra-rapide</h3>
+                <p data-i18n="speed-desc">Conversion locale sans attente de serveur</p>
+            </div>
+            
+            <div class="advantage-card glass-effect" data-parallax="3">
+                <div class="advantage-icon">
+                    <i class="fas fa-ad"></i>
+                </div>
+                <h3 data-i18n="adfree-title">Sans Publicité</h3>
+                <p data-i18n="adfree-desc">Aucune publicité ni trackers</p>
+            </div>
+            
+            <div class="advantage-card glass-effect" data-parallax="4">
+                <div class="advantage-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3 data-i18n="noreg-title">Sans Inscription</h3>
+                <p data-i18n="noreg-desc">Utilisation immédiate sans création de compte</p>
+            </div>
+            
+            <div class="advantage-card glass-effect" data-parallax="5">
+                <div class="advantage-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <h3 data-i18n="multilang-title">Multilingue</h3>
+                <p data-i18n="multilang-desc">Support FR/EN et thèmes clair/sombre</p>
+            </div>
+            
+            <div class="advantage-card glass-effect" data-parallax="6">
+                <div class="advantage-icon">
+                    <i class="fas fa-infinity"></i>
+                </div>
+                <h3 data-i18n="unlimited-title">Illimité</h3>
+                <p data-i18n="unlimited-desc">Aucune limite de taille ou de nombre de fichiers</p>
+            </div>
+            
+            <div class="advantage-card glass-effect" data-parallax="7">
+                <div class="advantage-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3 data-i18n="formats-title">+30 Formats</h3>
+                <p data-i18n="formats-desc">Support pour plus de 30 formats différents</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="support" class="glass-section">
+        <h2 class="section-title" data-i18n="support-title">Soutenez le développeur</h2>
+        
+        <div class="support-container glass-effect">
+            <div class="support-text">
+                <p data-i18n="support-text">Unifile est entièrement gratuit et illimité, mais si vous aimez cette application, vous pouvez soutenir le développeur par un don.</p>
+                <div class="support-buttons">
+                    <a href="https://www.paypal.com/paypalme/ThomasAlzib?country.x=FR&locale.x=fr_FR" target="_blank" class="btn support-btn">
+                        <i class="fab fa-paypal"></i>
+                        <span data-i18n="donate-button">Faire un don</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="screen/icon.png" alt="Unifile Logo">
+                <h3>Unifile</h3>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4 data-i18n="footer-legal">Liens juridiques</h4>
+                    <a href="#" id="privacy-link" data-i18n="privacy-link">Politique de confidentialité</a>
+                    <a href="#" id="terms-link" data-i18n="terms-link">Conditions générales</a>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="contact-title">Contact & Support</h4>
+                    <a href="https://github.com/Thomazlb" target="_blank">GitHub</a>
+                    <a href="https://www.paypal.com/paypalme/ThomasAlzib?country.x=FR&locale.x=fr_FR" target="_blank">PayPal</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Unifile - <span data-i18n="copyright">Tous droits réservés</span></p>
+        </div>
+    </footer>
+
+    <!-- Modal pour la politique de confidentialité -->
+    <div id="privacy-modal" class="modal">
+        <div class="modal-content glass-effect">
+            <span class="close-modal">&times;</span>
+            <h2 data-i18n="privacy-title">Politique de Confidentialité</h2>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <p data-i18n="privacy-update">
+                        <strong>Dernière mise à jour : 19 avril 2025</strong>
+                    </p>
+                    <p data-i18n="privacy-intro">
+                        <strong>Unifile prend votre confidentialité très au sérieux.</strong><br><br>
+                        Cette application est entièrement locale et ne collecte aucune donnée personnelle. Tous les fichiers que vous convertissez ou téléchargez restent sur votre appareil et ne sont jamais envoyés à un serveur externe.
+                    </p>
+                    <p data-i18n="privacy-data">
+                        <strong>1. Traitement des données :</strong><br>
+                        • Aucune donnée n'est collectée ou stockée en dehors de votre appareil<br>
+                        • Aucun compte n'est requis<br>
+                        • Aucun identifiant unique n'est généré<br>
+                        • Aucun cookie n'est utilisé<br>
+                        • Aucune analyse de comportement n'est effectuée
+                    </p>
+                    <p data-i18n="privacy-files">
+                        <strong>2. Protection de vos fichiers :</strong><br>
+                        Tous les fichiers que vous convertissez sont traités localement sur votre ordinateur. Unifile n'a pas accès à vos fichiers et ne peut pas les voir. L'application ne possède aucune fonctionnalité réseau pour envoyer vos données.
+                    </p>
+                    <p data-i18n="privacy-download">
+                        <strong>3. Utilisation des fonctionnalités de téléchargement :</strong><br>
+                        Les fonctionnalités de téléchargement d'Unifile sont fournies uniquement pour un usage légal et légitime. Nous ne soutenons en aucun cas :<br>
+                        • Le téléchargement ou la conversion de contenu protégé par des droits d'auteur sans autorisation<br>
+                        • L'extraction de contenu depuis des plateformes de streaming dont les conditions d'utilisation l'interdisent<br>
+                        • Toute utilisation qui pourrait enfreindre les lois sur la propriété intellectuelle
+                    </p>
+                    <p data-i18n="privacy-storage">
+                        <strong>4. Stockage local uniquement :</strong><br>
+                        Unifile stocke uniquement les données suivantes localement sur votre appareil :<br>
+                        • Vos préférences d'utilisation (langue, thème, dossiers de sortie)<br>
+                        • L'historique de vos conversions récentes (qui peut être effacé à tout moment)
+                    </p>
+                    <p data-i18n="privacy-commitment">
+                        <strong>5. Engagement de non-transmission :</strong><br>
+                        Nous nous engageons à ne jamais :<br>
+                        • Collecter ou transmettre vos données personnelles<br>
+                        • Partager des informations sur votre utilisation de l'application<br>
+                        • Intégrer des outils de suivi ou d'analyse
+                    </p>
+                    <p data-i18n="privacy-contact">
+                        <strong>6. Contact :</strong><br>
+                        Pour toute question concernant notre politique de confidentialité, vous pouvez contacter le développeur via GitHub ou PayPal comme indiqué dans la section Contact du site.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pour les conditions générales -->
+    <div id="terms-modal" class="modal">
+        <div class="modal-content glass-effect">
+            <span class="close-modal">&times;</span>
+            <h2 data-i18n="terms-title">Conditions Générales d'Utilisation</h2>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <p data-i18n="terms-update">
+                        <strong>Dernière mise à jour : 19 avril 2025</strong>
+                    </p>
+                    <p data-i18n="terms-intro">
+                        En utilisant l'application Unifile, vous acceptez les conditions suivantes :
+                    </p>
+                    <p data-i18n="terms-ip">
+                        <strong>1. Propriété intellectuelle</strong><br>
+                        L'application Unifile et son contenu (code, design, logo) sont la propriété exclusive du créateur et sont protégés par les lois sur la propriété intellectuelle. Toute reproduction, distribution ou modification non autorisée est strictement interdite.
+                    </p>
+                    <p data-i18n="terms-protection">
+                        <strong>2. Protection de l'application</strong><br>
+                        L'application Unifile est une œuvre protégée par le droit d'auteur. Il est strictement interdit de :<br>
+                        • Décompiler, désassembler ou tenter de découvrir le code source de l'application<br>
+                        • Modifier l'application ou créer des œuvres dérivées basées sur celle-ci<br>
+                        • Retirer les mentions de copyright ou toute autre indication de propriété<br>
+                        • Utiliser l'application à des fins commerciales sans autorisation écrite préalable<br>
+                        • S'approprier tout ou partie du code source ou des fonctionnalités pour créer une application concurrente
+                    </p>
+                    <p data-i18n="terms-personal">
+                        <strong>3. Utilisation personnelle uniquement</strong><br>
+                        L'application est fournie pour un usage personnel non commercial. Il est interdit de revendre, louer ou distribuer l'application ou toute partie de celle-ci.
+                    </p>
+                    <p data-i18n="terms-liability">
+                        <strong>4. Responsabilité</strong><br>
+                        L'application est fournie "telle quelle" sans aucune garantie. Le créateur ne peut être tenu responsable des dommages directs ou indirects résultant de l'utilisation ou de l'impossibilité d'utiliser l'application.
+                    </p>
+                    <p data-i18n="terms-content">
+                        <strong>5. Téléchargement de contenu</strong><br>
+                        Vous êtes responsable de vous assurer que tout contenu téléchargé respecte les lois sur le droit d'auteur applicables dans votre pays. L'application est destinée uniquement au téléchargement de contenu que vous avez le droit légal de télécharger.
+                    </p>
+                    <p data-i18n="terms-illegal">
+                        <strong>6. Clause de non-soutien au téléchargement illégal</strong><br>
+                        Unifile ne soutient aucunement l'utilisation de cette application dans le but de télécharger du contenu issu de plateformes protégées par des droits d'auteurs ou de tout site de streaming potentiel. L'utilisateur est seul responsable de l'utilisation qu'il fait de l'application et s'engage à respecter les lois en vigueur concernant le droit d'auteur et la propriété intellectuelle.
+                    </p>
+                    <p data-i18n="terms-laws">
+                        <strong>7. Respect des lois locales</strong><br>
+                        Vous acceptez d'utiliser Unifile conformément à toutes les lois applicables dans votre pays de résidence. Certaines fonctionnalités peuvent ne pas être légales dans certaines juridictions, et il est de votre responsabilité de vous conformer aux lois locales.
+                    </p>
+                    <p data-i18n="terms-modifications">
+                        <strong>8. Modifications des conditions</strong><br>
+                        Le créateur se réserve le droit de modifier ces conditions à tout moment. Les modifications entrent en vigueur dès leur publication. L'utilisation continue de l'application après modification des conditions constitue une acceptation de ces modifications.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
