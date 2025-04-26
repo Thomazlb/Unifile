@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unifile - Convertisseur et lecteur multimédia tout-en-un</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- En-tête avec navigation -->
+    <header class="glass-nav">
+        <div class="container">
+            <div class="nav-logo">
+                <img src="screen/icon.png" alt="Unifile Logo">
+                <h1>Unifile</h1>
+            </div>
+            <nav>
+                <ul class="desktop-nav">
+                    <li><a href="#features" data-i18n="nav-features">Fonctionnalités</a></li>
+                    <li><a href="#how-it-works" data-i18n="nav-how">Comment ça marche</a></li>
+                    <li><a href="#support" data-i18n="nav-support">Soutien</a></li>
+                </ul>
+                <div class="language-toggle">
+                    <div class="toggle-pill">
+                        <span class="active">FR</span>
+                        <span>EN</span>
+                        <div class="toggle-slider"></div>
+                    </div>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        <div class="mobile-nav">
+            <ul>
+                <li><a href="#features" data-i18n="nav-features">Fonctionnalités</a></li>
+                <li><a href="#how-it-works" data-i18n="nav-how">Comment ça marche</a></li>
+                <li><a href="#support" data-i18n="nav-support">Soutien</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Section Hero -->
+    <section class="hero">
+        <div class="parallax-bg">
+            <div class="layer-1"></div>
+            <div class="layer-2"></div>
+            <div class="layer-3"></div>
+        </div>
+        <div class="container">
+            <div class="glass-container hero-content">
+                <div class="hero-text">
+                    <h2>Unifile</h2>
+                    <p data-i18n="hero-subtitle">La solution tout-en-un pour convertir, regarder et télécharger vos fichiers multimédias sans pub</p>
+                    <a href="https://mega.nz/file/WNRwiBaa#tDKz6dZVWBYnVN-IAsTOE7rU5IXfxYMYGWjsU1CoJ_U" target="_blank" class="btn primary-btn" data-i18n="hero-download">Télécharger l'application</a>
+                </div>
+                <div class="hero-image">
+                    <img src="screen/all tabs.png" alt="Interface Unifile" class="floating">
+                </div>
+            </div>
+            
+            <!-- Hero Widgets -->
+            <div class="hero-widgets">
+                <div class="glass-container widget">
+                    <div class="widget-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3 data-i18n="widget-converter-title">Convertisseur</h3>
+                    <p data-i18n="widget-converter-desc">Documents, Images, Vidéos, Audio</p>
+                </div>
+                <div class="glass-container widget">
+                    <div class="widget-icon">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <h3 data-i18n="widget-player-title">Lecteur Vidéo</h3>
+                    <p data-i18n="widget-player-desc">YouTube, Dailymotion et plus sans pub</p>
+                </div>
+                <div class="glass-container widget">
+                    <div class="widget-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3 data-i18n="widget-download-title">Téléchargement</h3>
+                    <p data-i18n="widget-download-desc">Vidéos, Films et Séries</p>
+                </div>
+                <div class="glass-container widget">
+                    <div class="widget-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 data-i18n="widget-secure-title">100% Sécurisé</h3>
+                    <p data-i18n="widget-secure-desc">Aucun transfert de données</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Démonstration en direct -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="demo-title">Démonstration en direct</h2>
+            <div class="video-container">
+                <video id="demo-video">
+                    <source src="screen/livedemo.mp4" type="video/mp4">
+                    Votre navigateur ne prend pas en charge les vidéos HTML5.
+                </video>
+                <div class="video-controls">
+                    <button id="play-btn"><i class="fas fa-play"></i></button>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="tooltip">00:00</div>
+                    </div>
+                    <span class="time-code">00:00 / 00:00</span>
+                    <button id="fullscreen-btn"><i class="fas fa-expand"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fonctionnalités clés -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="features-title">Fonctionnalités</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="glass-container">
+                        <img src="screen/document converter.png" alt="Convertisseur de documents">
+                        <h3><i class="fas fa-file-alt"></i> <span data-i18n="feature-doc-title">Convertisseur de Documents</span></h3>
+                        <p data-i18n="feature-doc-desc">Convertissez facilement vos <span class="highlight">PDF</span>, <span class="highlight">DOCX</span>, <span class="highlight">TXT</span> et autres formats de documents</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="glass-container">
+                        <img src="screen/image converter.png" alt="Convertisseur d'images">
+                        <h3><i class="fas fa-image"></i> <span data-i18n="feature-img-title">Convertisseur d'Images</span></h3>
+                        <p data-i18n="feature-img-desc">Transformez vos images entre différents formats (<span class="highlight">PNG</span>, <span class="highlight">JPG</span>, <span class="highlight">WEBP</span>) avec une qualité optimale</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="glass-container">
+                        <img src="screen/video converter.png" alt="Convertisseur de vidéos">
+                        <h3><i class="fas fa-video"></i> <span data-i18n="feature-video-title">Convertisseur de Vidéos</span></h3>
+                        <p data-i18n="feature-video-desc">Convertissez vos vidéos dans tous les formats populaires avec une <span class="highlight">haute qualité</span></p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="glass-container">
+                        <img src="screen/musique converter.png" alt="Convertisseur audio">
+                        <h3><i class="fas fa-music"></i> <span data-i18n="feature-audio-title">Convertisseur Audio</span></h3>
+                        <p data-i18n="feature-audio-desc">Transformez vos fichiers audio en <span class="highlight">MP3</span>, <span class="highlight">WAV</span>, <span class="highlight">FLAC</span> et autres formats</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="glass-container">
+                        <img src="screen/vide player.png" alt="Lecteur vidéo">
+                        <h3><i class="fas fa-play-circle"></i> <span data-i18n="feature-player-title">Lecteur Vidéo</span></h3>
+                        <p data-i18n="feature-player-desc">Regardez des vidéos en ligne <span class="highlight">sans publicité</span> depuis YouTube, Dailymotion et autres plateformes</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="glass-container">
+                        <img src="screen/videodownload.png" alt="Téléchargement de vidéos">
+                        <h3><i class="fas fa-download"></i> <span data-i18n="feature-videodl-title">Téléchargement Vidéo</span></h3>
+                        <p data-i18n="feature-videodl-desc">Téléchargez facilement des vidéos depuis <span class="highlight">YouTube</span>, <span class="highlight">TikTok</span> et d'autres sites</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="glass-container">
+                        <img src="screen/moviedownload.png" alt="Films et séries">
+                        <h3><i class="fas fa-film"></i> <span data-i18n="feature-movie-title">Films & Séries</span></h3>
+                        <p data-i18n="feature-movie-desc">Accédez à des films et séries depuis des sources comme <span class="highlight">Wiflix</span> et <span class="highlight">Coflix</span></p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="glass-container">
+                        <img src="screen/settings.png" alt="Paramètres">
+                        <h3><i class="fas fa-cog"></i> <span data-i18n="feature-settings-title">Paramètres</span></h3>
+                        <p data-i18n="feature-settings-desc">Personnalisez l'application selon vos besoins avec nos <span class="highlight">options configurables</span></p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="glass-container">
+                        <img src="screen/history.png" alt="Historique">
+                        <h3><i class="fas fa-history"></i> <span data-i18n="feature-history-title">Historique</span></h3>
+                        <p data-i18n="feature-history-desc">Conservez une trace de vos <span class="highlight">conversions précédentes</span> pour y accéder rapidement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 100% local et sécurisé -->
+    <section class="security-section">
+        <div class="container">
+            <div class="glass-container feature-highlight">
+                <div class="shield-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="security-content">
+                    <h2 data-i18n="security-title">100% Local et Sécurisé</h2>
+                    <p data-i18n="security-desc">Unifile traite tous vos fichiers <strong>localement</strong> sur votre ordinateur. Aucune donnée n'est envoyée vers des serveurs externes. Vos fichiers restent privés et sécurisés en permanence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comment ça marche -->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="how-title">Comment ça marche</h2>
+            <div class="steps-container">
+                <div class="glass-container step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 data-i18n="how-step1-title">Importez vos fichiers</h3>
+                        <p data-i18n="how-step1-desc">Glissez-déposez ou sélectionnez les fichiers que vous souhaitez convertir ou traiter</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-file-import"></i>
+                    </div>
+                </div>
+                <div class="glass-container step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 data-i18n="how-step2-title">Choisissez le format</h3>
+                        <p data-i18n="how-step2-desc">Sélectionnez le format de sortie souhaité parmi nos nombreuses options disponibles</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                </div>
+                <div class="glass-container step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 data-i18n="how-step3-title">Conversion instantanée</h3>
+                        <p data-i18n="how-step3-desc">Laissez Unifile traiter votre fichier rapidement et efficacement</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation -->
+    <section class="installation-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="install-title">Installation</h2>
+            <div class="installation-timeline">
+                <div class="glass-container installation-card">
+                    <div class="install-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <div class="installation-step-number">1</div>
+                    <h3 data-i18n="install-step1-title">Téléchargement</h3>
+                    <p data-i18n="install-step1-desc">Téléchargez l'installateur depuis notre site officiel en un clic</p>
+                    <div class="installation-arrow">
+                        <i class="fas fa-long-arrow-alt-down"></i>
+                    </div>
+                </div>
+                <div class="glass-container installation-card">
+                    <div class="install-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="installation-step-number">2</div>
+                    <h3 data-i18n="install-step2-title">Installation</h3>
+                    <p data-i18n="install-step2-desc">Exécutez l'installateur et suivez les instructions simples à l'écran</p>
+                    <div class="installation-arrow">
+                        <i class="fas fa-long-arrow-alt-down"></i>
+                    </div>
+                </div>
+                <div class="glass-container installation-card">
+                    <div class="install-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="installation-step-number">3</div>
+                    <h3 data-i18n="install-step3-title">Lancement</h3>
+                    <p data-i18n="install-step3-desc">Ouvrez Unifile depuis votre bureau ou le menu démarrer</p>
+                    <div class="installation-arrow">
+                        <i class="fas fa-long-arrow-alt-down"></i>
+                    </div>
+                </div>
+                <div class="glass-container installation-card">
+                    <div class="install-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="installation-step-number">4</div>
+                    <h3 data-i18n="install-step4-title">Prêt à l'emploi</h3>
+                    <p data-i18n="install-step4-desc">Commencez à utiliser toutes les fonctionnalités sans configuration supplémentaire</p>
+                </div>
+            </div>
+            <div class="download-now">
+                <a href="https://mega.nz/file/WNRwiBaa#tDKz6dZVWBYnVN-IAsTOE7rU5IXfxYMYGWjsU1CoJ_U" target="_blank" class="btn primary-btn large-btn pulse-btn" data-i18n="install-download">
+                    <i class="fas fa-download"></i> Télécharger maintenant
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avantages -->
+    <section class="advantages-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="advantages-title">Avantages & Chiffres clés</h2>
+            <div class="advantages-grid">
+                <div class="glass-container advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 data-i18n="adv-fast-title">Rapide</h3>
+                    <p data-i18n="adv-fast-desc">Conversion ultra-rapide grâce à notre moteur optimisé</p>
+                    <div class="counter" data-target="300">0</div>
+                    <span class="counter-label" data-i18n="adv-fast-counter">% plus rapide</span>
+                </div>
+                <div class="glass-container advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 data-i18n="adv-secure-title">Sécurisé</h3>
+                    <p data-i18n="adv-secure-desc">Traitement 100% local de vos fichiers</p>
+                    <div class="counter" data-target="0">0</div>
+                    <span class="counter-label" data-i18n="adv-secure-counter">transfert de données</span>
+                </div>
+                <div class="glass-container advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <h3 data-i18n="adv-ad-free-title">Sans pub</h3>
+                    <p data-i18n="adv-ad-free-desc">Expérience utilisateur sans publicités ni distractions</p>
+                    <div class="counter" data-target="100">0</div>
+                    <span class="counter-label" data-i18n="adv-ad-free-counter">% sans pub</span>
+                </div>
+                <div class="glass-container advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 data-i18n="adv-formats-title">Multi-formats</h3>
+                    <p data-i18n="adv-formats-desc">Support pour tous les formats de fichier populaires</p>
+                    <div class="counter" data-target="50">0</div>
+                    <span class="counter-label" data-i18n="adv-formats-counter">formats supportés</span>
+                </div>
+                <div class="glass-container advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3 data-i18n="adv-interface-title">Interface intuitive</h3>
+                    <p data-i18n="adv-interface-desc">Design moderne et facile à prendre en main</p>
+                    <div class="counter" data-target="98">0</div>
+                    <span class="counter-label" data-i18n="adv-interface-counter">% de satisfaction</span>
+                </div>
+                <div class="glass-container advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h3 data-i18n="adv-updates-title">Mises à jour régulières</h3>
+                    <p data-i18n="adv-updates-desc">Améliorations et nouvelles fonctionnalités</p>
+                    <div class="counter" data-target="12">0</div>
+                    <span class="counter-label" data-i18n="adv-updates-counter">mises à jour/an</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soutien / Donation -->
+    <section id="support" class="support-section">
+        <div class="container">
+            <div class="glass-container support-content">
+                <h2 data-i18n="support-title">Soutenez le projet</h2>
+                <p data-i18n="support-desc">Unifile est un projet gratuit et open source. Votre soutien permet de continuer son développement et d'améliorer constamment ses fonctionnalités.</p>
+                <div class="support-buttons">
+                    <a href="https://paypal.me/ThomasAlzib?country.x=FR&locale.x=fr_FR" target="_blank" class="btn paypal-btn">
+                        <i class="fab fa-paypal"></i> <span data-i18n="support-donate">Faire un don</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="screen/icon.png" alt="Unifile Logo">
+                    <h2>Unifile</h2>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4 data-i18n="footer-legal">Juridique</h4>
+                        <ul>
+                            <li><a href="#" class="privacy-modal-trigger" data-i18n="footer-privacy">Politique de confidentialité</a></li>
+                            <li><a href="#" class="terms-modal-trigger" data-i18n="footer-terms">Conditions générales</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4 data-i18n="footer-contact">Contact & Support</h4>
+                        <ul>
+                            <li><a href="https://github.com/Thomazlb" target="_blank">GitHub</a></li>
+                            <li><a href="https://paypal.me/ThomasAlzib?country.x=FR&locale.x=fr_FR" target="_blank">PayPal</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer-copyright">&copy; 2025 Unifile. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modales -->
+    <div class="modal privacy-modal">
+        <div class="glass-container modal-content">
+            <div class="modal-header">
+                <h3 data-i18n="privacy-title">Politique de confidentialité</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <h4 data-i18n="privacy-data-title">Collecte de données</h4>
+                <p data-i18n="privacy-data-desc">Unifile ne collecte aucune donnée personnelle. Tous les fichiers sont traités localement sur votre ordinateur et ne sont jamais transférés vers des serveurs externes.</p>
+
+                <h4 data-i18n="privacy-cookies-title">Utilisation des cookies</h4>
+                <p data-i18n="privacy-cookies-desc">Notre site web utilise uniquement des cookies essentiels au fonctionnement de l'interface.</p>
+
+                <h4 data-i18n="privacy-files-title">Confidentialité des fichiers</h4>
+                <p data-i18n="privacy-files-desc">Les fichiers que vous traitez avec Unifile restent sur votre ordinateur et ne sont jamais partagés.</p>
+                
+                <h4 data-i18n="privacy-updates-title">Mises à jour</h4>
+                <p data-i18n="privacy-updates-desc">Cette politique de confidentialité peut être mise à jour périodiquement. Veuillez la consulter régulièrement.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal terms-modal">
+        <div class="glass-container modal-content">
+            <div class="modal-header">
+                <h3 data-i18n="terms-title">Conditions générales</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <h4 data-i18n="terms-license-title">Licence</h4>
+                <p data-i18n="terms-license-desc">Unifile est distribué sous licence open source. Vous êtes libre de l'utiliser pour un usage personnel ou professionnel.</p>
+
+                <h4 data-i18n="terms-liability-title">Limitations de responsabilité</h4>
+                <p data-i18n="terms-liability-desc">Unifile est fourni "tel quel" sans aucune garantie. L'équipe de développement ne peut être tenue responsable des problèmes liés à son utilisation.</p>
+
+                <h4 data-i18n="terms-ip-title">Propriété intellectuelle</h4>
+                <p data-i18n="terms-ip-desc">Respectez les droits d'auteur lors du téléchargement de contenu. Unifile est conçu pour un usage personnel et ne doit pas être utilisé pour distribuer du contenu protégé par copyright.</p>
+                
+                <h4 data-i18n="terms-changes-title">Modification des conditions</h4>
+                <p data-i18n="terms-changes-desc">Nous nous réservons le droit de modifier ces conditions à tout moment.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de traduction et fonctionnalités -->
+    <script src="js/fr.js"></script>
+    <script src="js/en.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
