@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unifile - Convertissez Tout, Localement et en Sécurité</title>
+    <meta name="description" content="Application de conversion de fichiers locale et sécurisée. Convertissez images, documents, vidéos et audio sans cloud, directement sur votre machine.">
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round:wght@400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Particules d'arrière-plan -->
+    <div id="particles-container"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="icon.svg" alt="Unifile" class="logo-icon">
+                <span class="logo-text">Unifile</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Fonctionnalités</a>
+                <a href="#formats" class="nav-link">Formats</a>
+                <a href="#comparison" class="nav-link">Comparaison</a>
+                <a href="#download" class="nav-link nav-cta">Télécharger</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">🔒</span>
+                    <span>100% Local & Sécurisé</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Convertissez Tout,</span>
+                    <span class="title-line title-highlight">Localement</span>
+                    <span class="title-line">et en Sécurité</span>
+                </h1>
+                <p class="hero-subtitle">
+                    L'application de conversion de fichiers qui révolutionne votre workflow. 
+                    Traitez vos images, documents, vidéos et audio directement sur votre machine, 
+                    sans cloud, sans limites.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Types de conversion</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Formats supportés</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Local & privé</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="cta-primary" id="download-btn">
+                        <span>Télécharger Unifile</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 15l-3-3h2V8h2v4h2l-3 3z" fill="currentColor"/>
+                            <path d="M4 17v2h16v-2" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <button class="cta-secondary">
+                        <span>Voir la démo</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M8 5v14l11-7z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="hero-platforms">
+                    <span class="platforms-label">Disponible pour :</span>
+                    <div class="platforms">
+                        <div class="platform">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M0 3.449L4.686 2.407l4.251 1.498-4.251 1.498L0 3.449zm0 2.857L4.686 5.264l4.251 1.498-4.251 1.498L0 6.306zm0 2.857L4.686 8.121l4.251 1.498-4.251 1.498L0 9.163z"/>
+                            </svg>
+                            <span>Windows 10/11</span>
+                        </div>
+                        <div class="platform">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.621 5.367 11.987 11.988 11.987 6.62 0 11.987-5.366 11.987-11.987C24.004 5.367 18.637.001 12.017.001z"/>
+                            </svg>
+                            <span>macOS 10.15+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="app-preview">
+                    <div class="app-window">
+                        <div class="window-header">
+                            <div class="window-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control maximize"></span>
+                            </div>
+                            <div class="window-title">Unifile</div>
+                        </div>                        <div class="window-content">
+                            <div class="conversion-preview">
+                                <div class="file-icon">📄</div>
+                                <div class="conversion-arrow">→</div>
+                                <div class="file-icon">📊</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Pourquoi choisir Unifile ?</h2>
+                <p class="section-subtitle">Une approche révolutionnaire de la conversion de fichiers</p>
+            </div>            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                            <circle cx="12" cy="16" r="1"/>
+                            <path d="m5 11 2-7h10l2 7"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">100% Local</h3>
+                    <p class="feature-description">Vos fichiers ne quittent jamais votre machine. Sécurité maximale garantie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m8 3 4 8 5-5v11H5V9l5 5 4-8Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Ultra Rapide</h3>
+                    <p class="feature-description">Pas de limite de bande passante. Conversion instantanée sur votre hardware.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="6"/>
+                            <circle cx="12" cy="12" r="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Sans Limites</h3>
+                    <p class="feature-description">Aucune restriction de taille ou de nombre. Convertissez autant que vous voulez.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 13c0 5-3.5 7.5-8 10-4.5-2.5-8-5-8-10V6l8-3 8 3v7Z"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Conformité RGPD</h3>
+                    <p class="feature-description">Respect total de la vie privée. Aucune télémétrie ou tracking.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Multi-cœurs</h3>
+                    <p class="feature-description">Optimisation maximale de vos ressources pour des performances exceptionnelles.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+                            <path d="M12 18h.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Interface Moderne</h3>
+                    <p class="feature-description">Design intuitif avec drag & drop et prévisualisation en temps réel.</p>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Formats Section -->
+    <section id="formats" class="formats">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">4 Types de Conversion, 50+ Formats</h2>
+                <p class="section-subtitle">Explorez nos formats supportés dans un environnement familier</p>
+            </div>
+            
+            <!-- File Explorer -->
+            <div class="file-explorer">
+                <!-- Explorer Header -->
+                <div class="explorer-header">
+                    <div class="explorer-toolbar">
+                        <div class="navigation-buttons">
+                            <button class="nav-btn" id="back-btn" disabled>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 12H5"/>
+                                    <path d="m12 19-7-7 7-7"/>
+                                </svg>
+                            </button>
+                            <button class="nav-btn" id="forward-btn" disabled>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14"/>
+                                    <path d="m12 5 7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="address-bar">
+                            <div class="path-segment">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z"/>
+                                </svg>
+                                <span id="current-path">Formats Supportés</span>
+                            </div>
+                        </div>
+                        <div class="view-options">
+                            <button class="view-btn active" data-view="grid">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect width="7" height="7" x="3" y="3" rx="1"/>
+                                    <rect width="7" height="7" x="14" y="3" rx="1"/>
+                                    <rect width="7" height="7" x="3" y="14" rx="1"/>
+                                    <rect width="7" height="7" x="14" y="14" rx="1"/>
+                                </svg>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="8" x2="21" y1="6" y2="6"/>
+                                    <line x1="8" x2="21" y1="12" y2="12"/>
+                                    <line x1="8" x2="21" y1="18" y2="18"/>
+                                    <line x1="3" x2="3.01" y1="6" y2="6"/>
+                                    <line x1="3" x2="3.01" y1="12" y2="12"/>
+                                    <line x1="3" x2="3.01" y1="18" y2="18"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Explorer Content -->
+                <div class="explorer-content">
+                    <!-- Folders View (Default) -->
+                    <div class="explorer-view active" id="folders-view">
+                        <div class="file-grid">
+                            <div class="file-item folder" data-category="images">
+                                <div class="file-icon">
+                                    <div class="folder-icon">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z"/>
+                                        </svg>                                        <div class="category-badge">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+                                                <circle cx="9" cy="9" r="2"/>
+                                                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="file-info">
+                                    <div class="file-name">Images</div>
+                                    <div class="file-details">9 formats • Jusqu'à 100 fichiers/min</div>
+                                </div>
+                            </div>
+
+                            <div class="file-item folder" data-category="documents">
+                                <div class="file-icon">
+                                    <div class="folder-icon">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z"/>
+                                        </svg>                                        <div class="category-badge">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                                                <polyline points="14,2 14,8 20,8"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="file-info">
+                                    <div class="file-name">Documents</div>
+                                    <div class="file-details">7 formats • Conversion instantanée</div>
+                                </div>
+                            </div>
+
+                            <div class="file-item folder" data-category="videos">
+                                <div class="file-icon">
+                                    <div class="folder-icon">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z"/>
+                                        </svg>                                        <div class="category-badge">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="m22 8-6 4 6 4V8Z"/>
+                                                <rect width="14" height="12" x="2" y="6" rx="2" ry="2"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="file-info">
+                                    <div class="file-name">Vidéos</div>
+                                    <div class="file-details">8 formats • Professionnel</div>
+                                </div>
+                            </div>
+
+                            <div class="file-item folder" data-category="audio">
+                                <div class="file-icon">
+                                    <div class="folder-icon">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z"/>
+                                        </svg>                                        <div class="category-badge">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M9 18V5l12-2v13"/>
+                                                <circle cx="6" cy="18" r="3"/>
+                                                <circle cx="18" cy="16" r="3"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="file-info">
+                                    <div class="file-name">Audio</div>
+                                    <div class="file-details">6 formats • Qualité audiophile</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Format Details View (Hidden by default) -->
+                    <div class="explorer-view formats-view" id="formats-view">
+                        <div class="format-header">
+                            <button class="back-to-folders">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 12H5"/>
+                                    <path d="m12 19-7-7 7-7"/>
+                                </svg>
+                                <span>Retour aux dossiers</span>
+                            </button>
+                            <div class="format-category-title">
+                                <div class="category-icon"></div>
+                                <h3 id="format-title"></h3>
+                                <span class="category-count" id="format-count"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="format-files-grid" id="format-files">
+                            <!-- Dynamically populated format files -->
+                        </div>
+                    </div>
+
+                    <!-- Conversion Demo View -->
+                    <div class="conversion-demo" id="conversion-demo">
+                        <div class="demo-title">
+                            <h3>Aperçu de la conversion</h3>
+                            <button class="back-to-formats">← Retour aux formats</button>
+                        </div>
+                        <div class="conversion-flow">
+                            <div class="source-file">
+                                <div class="demo-file-icon">
+                                    <div class="file-type-icon"></div>
+                                    <div class="demo-file-ext"></div>
+                                </div>
+                                <div class="file-label">Fichier source</div>
+                            </div>
+                            <div class="conversion-arrow">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14"/>
+                                    <path d="m12 5 7 7-7 7"/>
+                                </svg>
+                            </div>
+                            <div class="target-file">
+                                <div class="demo-file-icon">
+                                    <div class="file-type-icon"></div>
+                                    <div class="demo-file-ext"></div>
+                                </div>
+                                <div class="file-label">Fichier converti</div>
+                            </div>
+                        </div>
+                        <div class="conversion-info">
+                            <div class="performance-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">⚡</span>
+                                    <span>Vitesse : <span id="conversion-speed">Ultra-rapide</span></span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🔒</span>
+                                    <span>Sécurité : 100% Local</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="comparison">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Unifile vs Concurrence</h2>
+                <p class="section-subtitle">Pourquoi nous surpassons les alternatives</p>
+            </div>
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <div class="feature-col">Fonctionnalité</div>
+                    <div class="unifile-col">
+                        <img src="icon.svg" alt="Unifile" class="comparison-logo">
+                        <span>Unifile</span>
+                    </div>
+                    <div class="competitor-col">Solutions Cloud</div>
+                    <div class="competitor-col">Outils en Ligne</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature-col">Sécurité des données</div>
+                    <div class="unifile-col">
+                        <span class="check">✅</span>
+                        <span>100% Local</span>
+                    </div>
+                    <div class="competitor-col">
+                        <span class="cross">❌</span>
+                        <span>Cloud risqué</span>
+                    </div>
+                    <div class="competitor-col">
+                        <span class="cross">❌</span>
+                        <span>Serveurs tiers</span>
+                    </div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature-col">Vitesse de traitement</div>
+                    <div class="unifile-col">
+                        <span class="check">✅</span>
+                        <span>Hardware local</span>
+                    </div>
+                    <div class="competitor-col">
+                        <span class="cross">❌</span>
+                        <span>Bande passante</span>
+                    </div>
+                    <div class="competitor-col">
+                        <span class="cross">❌</span>
+                        <span>Upload/Download</span>
+                    </div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature-col">Taille des fichiers</div>
+                    <div class="unifile-col">
+                        <span class="check">✅</span>
+                        <span>Illimitée</span>
+                    </div>
+                    <div class="competitor-col">
+                        <span class="cross">❌</span>
+                        <span>Quotas stricts</span>
+                    </div>
+                    <div class="competitor-col">
+                        <span class="cross">❌</span>
+                        <span>100MB max</span>
+                    </div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature-col">Formats professionnels</div>
+                    <div class="unifile-col">
+                        <span class="check">✅</span>
+                        <span>R3D, MXF, PSD</span>
+                    </div>
+                    <div class="competitor-col">
+                        <span class="partial">⚠️</span>
+                        <span>Limité</span>
+                    </div>
+                    <div class="competitor-col">
+                        <span class="cross">❌</span>
+                        <span>Basiques uniquement</span>
+                    </div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature-col">Coût d'utilisation</div>
+                    <div class="unifile-col">
+                        <span class="check">✅</span>
+                        <span>Gratuit</span>
+                    </div>
+                    <div class="competitor-col">
+                        <span class="cross">❌</span>
+                        <span>Abonnement</span>
+                    </div>
+                    <div class="competitor-col">
+                        <span class="partial">⚠️</span>
+                        <span>Freemium limité</span>
+                    </div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature-col">Fonctionnement offline</div>
+                    <div class="unifile-col">
+                        <span class="check">✅</span>
+                        <span>Complet</span>
+                    </div>
+                    <div class="competitor-col">
+                        <span class="cross">❌</span>
+                        <span>Connexion requise</span>
+                    </div>
+                    <div class="competitor-col">
+                        <span class="cross">❌</span>
+                        <span>Internet obligatoire</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Section -->
+    <section class="technical">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technologies de Pointe</h2>
+                <p class="section-subtitle">Architecture moderne pour des performances exceptionnelles</p>
+            </div>            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m8 3 4 8 5-5v11H5V9l5 5 4-8Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="tech-title">Electron + TypeScript</h3>
+                    <p class="tech-description">Application native cross-platform avec code robuste et maintenable</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7"/>
+                            <rect width="15" height="14" x="1" y="5" rx="2" ry="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="tech-title">FFmpeg</h3>
+                    <p class="tech-description">Traitement vidéo et audio professionnel de niveau industriel</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+                            <circle cx="9" cy="9" r="2"/>
+                            <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                        </svg>
+                    </div>
+                    <h3 class="tech-title">Sharp</h3>
+                    <p class="tech-description">Manipulation d'images haute performance optimisée</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                        </svg>
+                    </div>
+                    <h3 class="tech-title">LibreOffice</h3>
+                    <p class="tech-description">Conversion documents enterprise de niveau professionnel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content">
+                <div class="download-info">
+                    <h2 class="download-title">Prêt à révolutionner vos conversions ?</h2>
+                    <p class="download-subtitle">
+                        Rejoignez les milliers d'utilisateurs qui ont choisi la sécurité, 
+                        la vitesse et la simplicité avec Unifile.
+                    </p>                    <div class="download-features">
+                        <div class="download-feature">
+                            <span class="feature-check">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </span>
+                            <span>Installation en 30 secondes</span>
+                        </div>
+                        <div class="download-feature">
+                            <span class="feature-check">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </span>
+                            <span>Aucune configuration requise</span>
+                        </div>
+                        <div class="download-feature">
+                            <span class="feature-check">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </span>
+                            <span>Mise à jour automatique</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="download-actions">
+                    <div class="platform-downloads">
+                        <button class="download-btn windows" data-platform="windows">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75V22.1L0 20.699M10.949 12.6H24V24l-13.051-1.875"/>
+                            </svg>                            <div class="download-info">
+                                <span class="platform-name">Windows</span>
+                                <span class="platform-version">v1.0 • 156MB</span>
+                            </div>
+                        </button>
+                        <button class="download-btn macos" data-platform="macos">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>                            <div class="download-info">
+                                <span class="platform-name">macOS</span>
+                                <span class="platform-version">v1.0 • 173MB</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="download-note">
+                        <p>Système requis : Windows 10/11 (64-bit) ou macOS 10.15+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="icon.svg" alt="Unifile" class="logo-icon">
+                        <span class="logo-text">Unifile</span>
+                    </div>
+                    <p class="footer-tagline">La conversion de fichiers réinventée</p>
+                    <div class="footer-credits">
+                        <p>Interface réalisée par <strong>Thomas ALZIB</strong></p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Produit</h4>
+                        <a href="#features">Fonctionnalités</a>
+                        <a href="#formats">Formats supportés</a>
+                        <a href="#download">Télécharger</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <a href="#">Documentation</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Légal</h4>
+                        <a href="#">Politique de confidentialité</a>
+                        <a href="#">Conditions d'utilisation</a>
+                        <a href="#">RGPD</a>
+                    </div>
+                </div>
+            </div>            <div class="footer-bottom">
+                <p>&copy; 2025 Unifile. Tous droits réservés.</p>
+                <p class="version">Version 1.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
