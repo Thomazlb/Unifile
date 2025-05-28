@@ -190,18 +190,16 @@ class DownloadSystem {
                 this.startRealDownload(btn);
             });
         });
-    }
-
-    getDownloadUrl(platform) {
+    }    getDownloadUrl(platform) {
         const baseUrl = 'https://github.com/Thomazlb/Unifile/releases/download/v1.0.0/';
         
         switch(platform) {
             case 'windows':
-                return baseUrl + 'Unifile_Windows.exe';
+                return baseUrl + 'Unifile_Windows.zip';
             case 'macos':
-                return baseUrl + 'Unifile_MacOS.dmg';
+                return baseUrl + 'Unifile_MacOS.zip';
             default:
-                return baseUrl + 'Unifile_Windows.exe'; // Par défaut
+                return baseUrl + 'Unifile_Windows.zip'; // Par défaut
         }
     }
 
