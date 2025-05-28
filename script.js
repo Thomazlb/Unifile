@@ -183,19 +183,32 @@ class DownloadSystem {
         if (userAgent.includes('mac')) return 'macos';
         if (userAgent.includes('win')) return 'windows';
         return 'windows'; // Par défaut
-    }
-
-    handleDownloadButtons() {
+    }    handleDownloadButtons() {
         document.querySelectorAll('.download-btn, .cta-primary').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                this.simulateDownload(btn);
+                this.startRealDownload(btn);
             });
         });
     }
 
-    simulateDownload(button) {
+    getDownloadUrl(platform) {
+        const baseUrl = 'https://github.com/Thomazlb/Unifile/releases/download/v1.0.0/';
+        
+        switch(platform) {
+            case 'windows':
+                return baseUrl + 'Unifile_Windows.exe';
+            case 'macos':
+                return baseUrl + 'Unifile_MacOS.dmg';
+            default:
+                return baseUrl + 'Unifile_Windows.exe'; // Par défaut
+        }
+    }
+
+    startRealDownload(button) {
         const originalText = button.innerHTML;
+        const platform = button.getAttribute('data-platform') || this.getPlatform();
+        const downloadUrl = this.getDownloadUrl(platform);
         
         // Animation de téléchargement
         button.innerHTML = `
@@ -205,25 +218,58 @@ class DownloadSystem {
                     <animate attributeName="stroke-dashoffset" values="60;0" dur="2s" repeatCount="indefinite"/>
                 </circle>
             </svg>
-            <span>Téléchargement...</span>
+            <span>Téléchargement en cours...</span>
         `;
         
         button.disabled = true;
+
+        // Créer un lien temporaire pour télécharger le fichier
+        const link = document.createElement('a');
+        link.href = downloadUrl;
+        link.download = downloadUrl.split('/').pop(); // Nom du fichier
+        link.style.display = 'none';
         
-        // Simuler le téléchargement
-        setTimeout(() => {
+        document.body.appendChild(link);
+        
+        // Déclencher le téléchargement
+        try {
+            link.click();
+            
+            // Afficher le succès après un court délai
+            setTimeout(() => {
+                button.innerHTML = `
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                    <span>Téléchargement démarré !</span>
+                `;
+                
+                // Restaurer le bouton après 3 secondes
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                }, 3000);
+            }, 1000);
+            
+        } catch (error) {
+            console.error('Erreur lors du téléchargement:', error);
+            
+            // Afficher l'erreur
             button.innerHTML = `
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                 </svg>
-                <span>Téléchargé !</span>
+                <span>Erreur de téléchargement</span>
             `;
             
             setTimeout(() => {
                 button.innerHTML = originalText;
                 button.disabled = false;
-            }, 2000);
-        }, 3000);
+            }, 3000);
+        }
+        
+        // Nettoyer le lien temporaire
+        document.body.removeChild(link);
     }
 }
 
