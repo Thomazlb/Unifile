@@ -117,7 +117,7 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-copyright">
-                        © {new Date().getFullYear()} Unifile. Tous droits réservés.
+                        © {new Date().getFullYear()} Unifile par Thomas ALZIB. Tous droits réservés.
                     </div>
                 </div>
             </div>
