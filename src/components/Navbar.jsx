@@ -31,18 +31,37 @@ const Navbar = () => {
         setIsMobileMenuOpen(false)
     }
 
+    const scrollToSection = (e, sectionId) => {
+        e.preventDefault()
+        closeMobileMenu()
+
+        const section = document.getElementById(sectionId)
+        if (section) {
+            // Get the section's position relative to the content
+            const rect = section.getBoundingClientRect()
+            const scrollTop = window.scrollY
+            // Calculate target scroll position (accounting for the parallax effect)
+            const targetScroll = scrollTop + rect.top - window.innerHeight
+
+            window.scrollTo({
+                top: Math.max(0, targetScroll + window.innerHeight),
+                behavior: 'smooth'
+            })
+        }
+    }
+
     return (
         <>
             <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
                 <div className="navbar-container">
-                    <a href="#" className="navbar-logo">
+                    <a href="#" className="navbar-logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>
                         <img src="/assets/Unifile.svg" alt="Unifile" className="logo-icon" />
                         <span className="logo-text">Unifile</span>
                     </a>
 
                     <div className="navbar-links">
-                        <a href="#features">Fonctionnalités</a>
-                        <a href="#how-it-works">Comment ça marche</a>
+                        <a href="#features" onClick={(e) => scrollToSection(e, 'features')}>Fonctionnalités</a>
+                        <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')}>Comment ça marche</a>
                     </div>
 
                     <div className="navbar-actions">
@@ -89,17 +108,23 @@ const Navbar = () => {
             {/* Mobile Menu Drawer */}
             <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
                 <div className="mobile-menu-header">
-                    <a href="#" className="navbar-logo" onClick={closeMobileMenu}>
+                    <a href="#" className="navbar-logo" onClick={(e) => { e.preventDefault(); closeMobileMenu(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>
                         <img src="/assets/Unifile.svg" alt="Unifile" className="logo-icon" />
                         <span className="logo-text">Unifile</span>
                     </a>
                 </div>
                 <div className="mobile-menu-links">
-                    <a href="#features" onClick={closeMobileMenu}>Fonctionnalités</a>
-                    <a href="#how-it-works" onClick={closeMobileMenu}>Comment ça marche</a>
+                    <a href="#features" onClick={(e) => scrollToSection(e, 'features')}>Fonctionnalités</a>
+                    <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')}>Comment ça marche</a>
                 </div>
                 <div className="mobile-menu-actions">
-                    <a href="#download" className="btn btn-primary btn-lg" onClick={closeMobileMenu}>
+                    <a
+                        href={os === 'windows'
+                            ? 'https://github.com/Thomazlb/Unifile/releases/latest/download/Unifile.exe'
+                            : 'https://github.com/Thomazlb/Unifile/releases/latest/download/Unifile.dmg'}
+                        className="btn btn-primary btn-lg"
+                        onClick={closeMobileMenu}
+                    >
                         {os === 'windows' ? 'Télécharger pour Windows' : 'Télécharger pour macOS'}
                     </a>
                 </div>
@@ -109,3 +134,4 @@ const Navbar = () => {
 }
 
 export default Navbar
+
