@@ -1,0 +1,242 @@
+/* ============================================
+   Footer Section - Modern Design
+   ============================================ */
+
+.footer {
+    background: var(--color-bg-primary);
+    padding: var(--spacing-24) 0 var(--spacing-8);
+    position: relative;
+    min-height: 400px;
+}
+
+.footer-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 50% at 50% 100%,
+            rgba(0, 122, 255, 0.15) 0%,
+            transparent 50%);
+    pointer-events: none;
+}
+
+/* CTA Section */
+.footer-cta {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-bottom: var(--spacing-16);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-cta-title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--spacing-4);
+}
+
+.footer-cta-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-10);
+}
+
+/* Download Cards Grid */
+.footer-download-grid {
+    display: flex;
+    gap: var(--spacing-4);
+    justify-content: center;
+    margin-bottom: var(--spacing-8);
+}
+
+.download-card {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    padding: var(--spacing-4) var(--spacing-6);
+    border-radius: var(--radius-2xl);
+    text-decoration: none;
+    transition: all var(--duration-normal) var(--ease-out);
+    min-width: 240px;
+}
+
+.download-card.primary {
+    background: var(--color-accent);
+    color: white;
+    box-shadow: var(--shadow-glow);
+}
+
+.download-card.primary:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow-strong);
+}
+
+.download-card.secondary {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border-strong);
+}
+
+.download-card.secondary:hover {
+    background: var(--color-bg-hover);
+    transform: translateY(-2px);
+}
+
+.download-card-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-lg);
+}
+
+.download-card.secondary .download-card-icon {
+    background: var(--color-bg-secondary);
+}
+
+.download-card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.download-card-label {
+    font-size: var(--font-size-xs);
+    opacity: 0.8;
+}
+
+.download-card-platform {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+}
+
+.download-card-arrow {
+    margin-left: auto;
+    opacity: 0.8;
+}
+
+/* Footer Features */
+.footer-features {
+    display: flex;
+    gap: var(--spacing-6);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-feature {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.footer-feature svg {
+    color: var(--color-success);
+}
+
+/* Divider */
+.footer-divider {
+    height: 1px;
+    background: var(--color-border);
+    margin-bottom: var(--spacing-8);
+}
+
+/* Bottom */
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-6);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.footer-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-sm);
+}
+
+.footer-brand-text {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-6);
+}
+
+.footer-links a {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    transition: color var(--duration-fast) var(--ease-out);
+}
+
+.footer-links a:hover {
+    color: var(--color-text-primary);
+}
+
+.footer-copyright {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-tertiary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer {
+        padding: var(--spacing-16) 0 var(--spacing-6);
+    }
+
+    .footer-cta {
+        padding-bottom: var(--spacing-10);
+    }
+
+    .footer-cta-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .footer-cta-subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    .footer-download-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .download-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .footer-features {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-3);
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-4);
+    }
+}

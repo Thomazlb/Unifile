@@ -1,0 +1,151 @@
+/* ============================================
+   How It Works Section - Enhanced
+   ============================================ */
+
+.how-it-works {
+    background: var(--color-bg-secondary);
+    position: relative;
+    padding: var(--spacing-24) 0;
+    padding-bottom: var(--spacing-32);
+    border-radius: 40px 40px 0 0;
+    margin-top: -40px;
+}
+
+/* Header */
+.how-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--spacing-16);
+}
+
+.how-badge {
+    display: inline-block;
+    padding: var(--spacing-2) var(--spacing-5);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-accent);
+    background: var(--color-accent-subtle);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--spacing-5);
+}
+
+.how-title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--spacing-4);
+}
+
+.how-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+}
+
+/* Steps */
+.how-steps {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: var(--spacing-6);
+}
+
+.step-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    max-width: 340px;
+    padding: var(--spacing-8);
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.step-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-lg);
+}
+
+.step-icon-wrapper {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    background: var(--color-accent-subtle);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--spacing-4);
+}
+
+.step-number-badge {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--spacing-3);
+}
+
+.step-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-3);
+}
+
+.step-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+}
+
+/* Connector Arrow */
+.step-connector {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-border-strong);
+    z-index: 10;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .how-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .step-connector {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .how-it-works {
+        border-radius: 32px 32px 0 0;
+        padding-top: calc(var(--spacing-16) + 32px);
+    }
+
+    .how-header {
+        margin-bottom: var(--spacing-10);
+    }
+
+    .how-steps {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-4);
+    }
+
+    .step-card {
+        max-width: 100%;
+        padding: var(--spacing-6);
+    }
+
+    .how-title {
+        font-size: var(--font-size-2xl);
+    }
+}

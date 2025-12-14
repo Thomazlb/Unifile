@@ -1,0 +1,82 @@
+/* ============================================
+   App - Parallax Scroll Effect
+   Based on Hudson Marinho's parallax effect
+   ============================================ */
+
+/* Scroll Animate Container */
+#scroll-animate {
+    overflow: hidden;
+}
+
+#scroll-animate-main {
+    width: 100%;
+    left: 0;
+    position: fixed;
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0, 0, 0, 1);
+}
+
+/* Fixed Header */
+header {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    position: fixed;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0, 0, 0, 1);
+}
+
+/* Fixed Footer */
+footer {
+    width: 100%;
+    min-height: 400px;
+    bottom: -400px;
+    position: fixed;
+    z-index: 0;
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0, 0, 0, 1);
+}
+
+/* Footer solid background to cover Hero */
+.footer-bg-solid {
+    position: absolute;
+    inset: 0;
+    background: var(--color-bg-primary);
+    z-index: 0;
+}
+
+/* Footer component should sit on top */
+footer>*:not(.footer-bg-solid) {
+    position: relative;
+    z-index: 1;
+}
+
+/* Scrollable Content */
+.content {
+    position: relative;
+    z-index: 1;
+    background: var(--color-bg-primary);
+}
+
+/* Wrapper with shadow for depth effect */
+.wrapper-parallax {
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.6);
+    border-radius: 40px 40px 40px 40px;
+}
+
+/* Content sections need rounded corners */
+.content {
+    border-radius: 40px 40px 0 0;
+    overflow: hidden;
+}
+
+/* Ensure sections inside content flow properly */
+.content>section:first-child {
+    padding-top: var(--spacing-16);
+}

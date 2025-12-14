@@ -1,0 +1,57 @@
+/* Custom Cursor - Simple Circle that shrinks to dot */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    margin-left: -20px;
+    margin-top: -20px;
+}
+
+/* Shrink to dot on hover */
+.custom-cursor.hovering {
+    width: 10px;
+    height: 10px;
+    margin-left: -5px;
+    margin-top: -5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Magnetic state - glow effect */
+.custom-cursor.magnetic {
+    border-color: rgba(0, 122, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 122, 255, 0.4);
+}
+
+.custom-cursor.magnetic.hovering {
+    background-color: rgba(0, 122, 255, 0.9);
+    border-color: rgba(0, 122, 255, 0.9);
+    box-shadow: 0 0 20px rgba(0, 122, 255, 0.6);
+}
+
+/* Hide default cursor when custom cursor is active */
+@media (pointer: fine) {
+    body {
+        cursor: none !important;
+    }
+
+    a,
+    button,
+    [role="button"] {
+        cursor: none !important;
+    }
+}
+
+/* Hide on touch devices */
+@media (pointer: coarse) {
+    .custom-cursor {
+        display: none;
+    }
+}
