@@ -12,7 +12,6 @@ function App() {
   const scrollAnimateRef = useRef(null)
   const scrollAnimateMainRef = useRef(null)
   const headerRef = useRef(null)
-  const footerRef = useRef(null)
   const contentRef = useRef(null)
   const wrapperRef = useRef(null)
 
@@ -21,12 +20,9 @@ function App() {
 
     const initParallax = () => {
       const windowHeight = window.innerHeight
-      const windowWidth = window.innerWidth
-      const footerHeight = footerRef.current?.offsetHeight || 400
       const contentHeight = contentRef.current?.offsetHeight || 1000
 
-      // Max scroll = content height (same for mobile and desktop)
-      // The footer is fixed positioned, so it doesn't need extra scroll space
+      // Max scroll = content height (footer is now inside content)
       maxScroll = contentHeight
 
       const heightDocument = windowHeight + maxScroll
@@ -45,20 +41,10 @@ function App() {
         wrapperRef.current.style.marginTop = `${windowHeight}px`
       }
 
-      return { footerHeight, heightDocument, maxScroll }
+      return { heightDocument, maxScroll }
     }
 
-    const scrollFooter = (scrollY, footerHeight) => {
-      if (footerRef.current) {
-        if (scrollY >= footerHeight) {
-          footerRef.current.style.bottom = '0px'
-        } else {
-          footerRef.current.style.bottom = `-${footerHeight}px`
-        }
-      }
-    }
-
-    const { footerHeight } = initParallax()
+    initParallax()
 
     const handleScroll = () => {
       // Recalculate maxScroll dynamically
@@ -83,15 +69,6 @@ function App() {
         const bgPos = 50 - (scroll * 100 / (dynamicMaxScroll + window.innerHeight))
         headerRef.current.style.backgroundPositionY = `${bgPos}%`
       }
-
-      // Show/hide footer
-      scrollFooter(scroll, footerHeight)
-    }
-
-    // Initial call
-    const measurements = initParallax()
-    if (measurements) {
-      scrollFooter(window.scrollY, measurements.footerHeight)
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -103,7 +80,6 @@ function App() {
     })
 
     if (contentRef.current) observer.observe(contentRef.current)
-    if (footerRef.current) observer.observe(footerRef.current)
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
@@ -125,18 +101,13 @@ function App() {
               <Hero />
             </header>
 
-            {/* Scrollable Content */}
+            {/* Scrollable Content - Footer is now part of content flow */}
             <section className="content" ref={contentRef}>
               <Features />
               <HowItWorks />
               <Comparison />
-            </section>
-
-            {/* Fixed Footer */}
-            <footer ref={footerRef}>
-              <div className="footer-bg-solid"></div>
               <Footer />
-            </footer>
+            </section>
           </div>
         </div>
       </div>
@@ -145,4 +116,5 @@ function App() {
 }
 
 export default App
+
 

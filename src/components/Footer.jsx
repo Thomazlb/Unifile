@@ -111,11 +111,6 @@ const Footer = () => {
                         <span className="footer-brand-text">Unifile</span>
                     </div>
 
-                    <div className="footer-links">
-                        <a href="#features">Fonctionnalités</a>
-                        <a href="#how-it-works">Comment ça marche</a>
-                    </div>
-
                     <div className="footer-copyright">
                         © {new Date().getFullYear()} Unifile par Thomas ALZIB. Tous droits réservés.
                     </div>

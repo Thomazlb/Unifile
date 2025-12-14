@@ -31,52 +31,27 @@ header {
     transition-timing-function: cubic-bezier(0, 0, 0, 1);
 }
 
-/* Fixed Footer */
-footer {
-    width: 100%;
-    min-height: 400px;
-    bottom: -400px;
-    position: fixed;
-    z-index: 0;
-    transition-property: all;
-    transition-duration: 0.4s;
-    transition-timing-function: cubic-bezier(0, 0, 0, 1);
-}
-
-/* Footer solid background to cover Hero */
-.footer-bg-solid {
-    position: absolute;
-    inset: 0;
-    background: var(--color-bg-primary);
-    z-index: 0;
-}
-
-/* Footer component should sit on top */
-footer>*:not(.footer-bg-solid) {
-    position: relative;
-    z-index: 1;
-}
-
-/* Scrollable Content */
+/* Scrollable Content - Footer is now inside this */
 .content {
     position: relative;
     z-index: 1;
     background: var(--color-bg-primary);
+    border-radius: 40px 40px 0 0;
+    overflow: hidden;
 }
 
 /* Wrapper with shadow for depth effect */
 .wrapper-parallax {
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.6);
-    border-radius: 40px 40px 40px 40px;
-}
-
-/* Content sections need rounded corners */
-.content {
     border-radius: 40px 40px 0 0;
-    overflow: hidden;
 }
 
 /* Ensure sections inside content flow properly */
 .content>section:first-child {
     padding-top: var(--spacing-16);
+}
+
+/* Footer inside content needs proper bottom border radius */
+.content .footer {
+    border-radius: 0;
 }
