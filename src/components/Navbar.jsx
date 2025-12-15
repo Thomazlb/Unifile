@@ -62,6 +62,7 @@ const Navbar = () => {
                     <div className="navbar-links">
                         <a href="#features" onClick={(e) => scrollToSection(e, 'features')}>Fonctionnalités</a>
                         <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')}>Comment ça marche</a>
+                        <a href="#download" onClick={(e) => scrollToSection(e, 'download')} className="nav-download">Télécharger</a>
                     </div>
 
                     <div className="navbar-actions">
@@ -104,6 +105,8 @@ const Navbar = () => {
                 <a href="#features" onClick={(e) => scrollToSection(e, 'features')}>Fonctionnalités</a>
                 <span className="morph-divider"></span>
                 <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')}>Comment ça marche</a>
+                <span className="morph-divider"></span>
+                <a href="#download" onClick={(e) => scrollToSection(e, 'download')} className="morph-download">Télécharger</a>
             </div>
         </>
     )
