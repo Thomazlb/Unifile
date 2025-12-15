@@ -318,6 +318,10 @@
         bottom: var(--spacing-6);
     }
 
+    .hero-scroll-indicator {
+        display: none;
+    }
+
     .hero-glow {
         width: 300px;
         height: 200px;
