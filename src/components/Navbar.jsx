@@ -99,35 +99,11 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            {/* Mobile Menu Overlay */}
-            <div
-                className={`mobile-menu-overlay ${isMobileMenuOpen ? 'active' : ''}`}
-                onClick={closeMobileMenu}
-            />
-
-            {/* Mobile Menu Drawer */}
-            <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-                <div className="mobile-menu-header">
-                    <a href="#" className="navbar-logo" onClick={(e) => { e.preventDefault(); closeMobileMenu(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>
-                        <img src="/assets/Unifile.svg" alt="Unifile" className="logo-icon" />
-                        <span className="logo-text">Unifile</span>
-                    </a>
-                </div>
-                <div className="mobile-menu-links">
-                    <a href="#features" onClick={(e) => scrollToSection(e, 'features')}>Fonctionnalités</a>
-                    <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')}>Comment ça marche</a>
-                </div>
-                <div className="mobile-menu-actions">
-                    <a
-                        href={os === 'windows'
-                            ? 'https://github.com/Thomazlb/Unifile/releases/latest/download/Unifile.exe'
-                            : 'https://github.com/Thomazlb/Unifile/releases/latest/download/Unifile.dmg'}
-                        className="btn btn-primary btn-lg"
-                        onClick={closeMobileMenu}
-                    >
-                        {os === 'windows' ? 'Télécharger pour Windows' : 'Télécharger pour macOS'}
-                    </a>
-                </div>
+            {/* Mobile Morphing Menu - Compact pill that appears next to hamburger */}
+            <div className={`mobile-morph-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+                <a href="#features" onClick={(e) => scrollToSection(e, 'features')}>Fonctionnalités</a>
+                <span className="morph-divider"></span>
+                <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')}>Comment ça marche</a>
             </div>
         </>
     )
